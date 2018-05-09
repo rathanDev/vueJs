@@ -23,10 +23,16 @@ var app1Created = function () {
   console.log("created hook");
 };
 
+var app1Computed = {};
+app1Computed.getReversedMessage = function () {
+    return this.message.split('').reverse().join('')
+};
+
 //vue instance
 var app1 = new Vue({
     el: '#app1',
     data: app1Data,
     methods: app1Methods,
-    created: app1Created
+    created: app1Created,
+    computed: app1Computed
 });
