@@ -42,6 +42,15 @@
         <input v-model="message">
     </div>
 
+    <h1>Use template</h1>
+    <ol>
+        <todo-item
+                v-for="item in todos"
+                v-bind:todo="item"
+                v-bind:key="item.id">
+        </todo-item>
+    </ol>
+
 </div>
 
 <script src="js/index.js"></script>
