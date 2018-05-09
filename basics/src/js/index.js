@@ -3,25 +3,30 @@ Vue.component('todo-item', {
     template: '<li>{{ todo.text }}</li>'
 });
 
-var data = {};
-var methods = {};
+var app1Data = {};
+var app1Methods = {};
 
-data.message = 'Hey! Vue.js!';
-data.seen = true;
-data.todos = [
+app1Data.message = 'Hey! Vue.js!';
+app1Data.seen = true;
+app1Data.todos = [
     {text: 'Learn js'},
     {text: 'Learn angular'},
     {text: 'Learn Vue'},
     {text: 'Build something awesome'}
 ];
 
-methods.reverseMessage = function () {
+app1Methods.reverseMessage = function () {
     this.message = this.message.split('').reverse().join('')
 };
 
+var app1Created = function () {
+  console.log("created hook");
+};
+
 //vue instance
-var app = new Vue({
-    el: '#app',
-    data: data,
-    methods: methods
+var app1 = new Vue({
+    el: '#app1',
+    data: app1Data,
+    methods: app1Methods,
+    created: app1Created
 });
