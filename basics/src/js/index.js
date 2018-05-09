@@ -3,8 +3,12 @@ Vue.component('todo-item', {
     template: '<li>{{ todo.text }}</li>'
 });
 
+//for fields
 var app1Data = {};
+//for methods
 var app1Methods = {};
+//a computed getter - cached based on their dependencies
+var app1Computed = {};
 
 app1Data.message = 'Hey! Vue.js!';
 app1Data.seen = true;
@@ -26,7 +30,6 @@ var app1Created = function () {
   console.log("created hook");
 };
 
-var app1Computed = {};
 app1Computed.reversedMessage = function () {
     return this.message.split('').reverse().join('')
 };
